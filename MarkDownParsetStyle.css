@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+code {
+	max-width: 700px;
+	font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+	padding: 5px;
+	border-radius: 5px;
+}
+.MarkDownParserCodeDecription{
+	font-size: 1em;
+	background-color: #4f9ed0;
+	color: white;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
+.MarkDownParser{
+	font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+	background-color: lightgray;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
