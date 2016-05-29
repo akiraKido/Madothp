@@ -22,7 +22,6 @@ var ParseMarkDownToHTML = function ( userText ) {
 		// ヘッダの判定
 		line = parseLine(textArray[i-1], line, textArray[i+1]);	
 		
-		Debug(line);
 		// 判定結果を反映
 		fixedText.push (line);
 	});
@@ -179,15 +178,13 @@ function contains( value, list ){
 }
 
 // どうでもいいけどデバッガ
-/*
 
-var DebugLogIdentifier;
-var DebugLogID = function (text){
-	DebugLogIdentifier = document.getElementById(text);
-}
+// var DebugLogIdentifier;
+// var DebugLogID = function (text){
+// 	DebugLogIdentifier = document.getElementById(text);
+// }
 
-function Debug (text){
-	DebugLogIdentifier.innerText += text + "\n";
-	DebugLogIdentifier.scrollTop = DebugLogIdentifier.scrollHeight;
-}
-*/
+// function Debug (text){
+// 	DebugLogIdentifier.innerText += text + "\n";
+// 	DebugLogIdentifier.scrollTop = DebugLogIdentifier.scrollHeight;
+// }
