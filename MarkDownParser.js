@@ -179,6 +179,7 @@ function contains( value, list ){
 }
 
 // どうでもいいけどデバッガ
+/*
 
 var DebugLogIdentifier;
 var DebugLogID = function (text){
@@ -189,3 +190,4 @@ function Debug (text){
 	DebugLogIdentifier.innerText += text + "\n";
 	DebugLogIdentifier.scrollTop = DebugLogIdentifier.scrollHeight;
 }
+*/
