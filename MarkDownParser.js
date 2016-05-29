@@ -21,6 +21,8 @@ var ParseMarkDownToHTML = function ( userText ) {
 		line.replace(/^\t+/g, "");		
 		// ヘッダの判定
 		line = parseLine(textArray[i-1], line, textArray[i+1]);	
+		
+		Debug(line);
 		// 判定結果を反映
 		fixedText.push (line);
 	});
@@ -143,6 +145,8 @@ function parseLine( prevText, text, nextText ){
 	}
 	
 	if(!isCodeBlockStart){
+		var linkText = "";
+		var linkAddress = "";
 		for(var i = 1; i <= text.length; i++){
 			if(text.substr(i, 1) == "`"){
 				if(!isLocalCodeStart){
@@ -153,6 +157,14 @@ function parseLine( prevText, text, nextText ){
 					isLocalCodeStart = false;
 				}
 			}
+			if(text.substr(i, 1) == "["){
+				linkText = text.substr(text.indexOf("[") + 1, text.lastIndexOf("]") - text.indexOf("[") - 1);
+				linkAddress = text.substr(text.indexOf("(") + 1, text.lastIndexOf(")") - text.indexOf("(") - 1);
+				if(linkAddress.substr(3,7) != "http://" || linkAddress.substr(3,8) != "https://"){
+					linkAddress = "http://" + linkAddress;
+				}
+				text = text.substr(1, i - 1) + '<a href="' + linkAddress + '">' + linkText + "</a>" + text.substr(text.lastIndexOf(")") + 1, text.length - text.lastIndexOf(")") - 1);
+			}			
 		}
 	}
 	
